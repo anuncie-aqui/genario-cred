@@ -1,0 +1,298 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Genario Cred | Seu dinheiro chegou!</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #101820;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        header {
+            background: #172b25;
+            padding: 25px;
+            border-bottom: 3px solid #f1c40f;
+        }
+
+        .logo {
+            font-size: 35px;
+            font-weight: bold;
+            color: #f1c40f;
+        }
+
+        .subtitulo {
+            color: #ddd;
+            font-size: 14px;
+        }
+
+        .container {
+            max-width: 650px;
+            margin: 35px auto;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #f1c40f;
+            font-size: 30px;
+        }
+
+        .card {
+            background: #1e2c38;
+            padding: 30px;
+            border-radius: 16px;
+            margin-top: 25px;
+            border: 1px solid #34495e;
+            box-shadow: 0 8px 25px #0005;
+        }
+
+        .destaque {
+            color: #2ecc71;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 15px;
+            margin: 12px 0;
+            border-radius: 8px;
+            border: none;
+            font-size: 17px;
+            text-align: center;
+        }
+
+        button {
+            background: #f1c40f;
+            color: #17202a;
+            border: none;
+            padding: 16px;
+            width: 100%;
+            border-radius: 8px;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 12px;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #2ecc71;
+            transform: scale(1.03);
+        }
+
+        .resultado {
+            display: none;
+            background: #152d23;
+            border: 1px solid #2ecc71;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            line-height: 1.8;
+        }
+
+        .aviso {
+            color: #ff7675;
+            font-weight: bold;
+        }
+
+        footer {
+            background: #172b25;
+            padding: 25px;
+            margin-top: 40px;
+            font-size: 13px;
+            color: #aaa;
+        }
+
+        .selo {
+            display: inline-block;
+            background: #f1c40f;
+            color: #17202a;
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">💰 GENARIO CRED</div>
+        <p class="subtitulo">
+            Transformando seu desespero em oportunidade desde ontem.
+        </p>
+        <span class="selo">100% FICTÍCIO • PARÓDIA</span>
+    </header>
+
+    <main class="container">
+
+        <h1>⚠️ PRECISANDO DE DINHEIRO?</h1>
+
+        <p>
+            O banco negou? O cartão estourou?
+            O agiota não atende mais?
+        </p>
+
+        <p class="destaque">
+            CALMA! A GENARIO CRED CHEGOU!
+        </p>
+
+        <div class="card">
+
+            <h2>🏦 Crédito sem burocracia!</h2>
+
+            <p>
+                Aqui seu empréstimo é liberado na velocidade
+                de um PIX!
+            </p>
+
+            <p>✅ Aprovação imaginária imediata</p>
+            <p>✅ 30 dias para pagar</p>
+            <p>✅ Aceitamos carro, moto, casa e terreno*</p>
+            <p>✅ Atendimento com cara fechada</p>
+
+            <p class="aviso">
+                *Até a bicicleta será analisada.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>💵 Simule seu empréstimo</h2>
+
+            <p>Quanto você está precisando?</p>
+
+            <input
+                type="number"
+                id="valor"
+                placeholder="Digite o valor em R$"
+                min="1"
+            >
+
+            <button onclick="simular()">
+                SIMULAR EMPRÉSTIMO
+            </button>
+
+            <div class="resultado" id="resultado"></div>
+
+        </div>
+
+        <div class="card">
+
+            <h2>📞 Fale com nosso especialista!</h2>
+
+            <p>
+                Genario, o homem que não empresta dinheiro.
+                Ele apenas resolve problemas financeiros!
+            </p>
+
+            <button onclick="solicitar()">
+                SOLICITAR EMPRÉSTIMO AGORA
+            </button>
+
+        </div>
+
+        <div class="card">
+
+            <h2>📢 Comunicado oficial</h2>
+
+            <p class="aviso">
+                NÃO FAÇO MAIS APOSTAS!
+            </p>
+
+            <p>
+                Agora é só empréstimo mesmo!
+            </p>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <p>
+            GENARIO CRED © 2026
+        </p>
+
+        <p>
+            Seu problema financeiro agora é nosso entretenimento.
+        </p>
+
+        <p>
+            ⚠️ Página humorística. Não oferece empréstimos reais,
+            não solicita dados pessoais e não possui vínculo
+            com instituições financeiras.
+        </p>
+    </footer>
+
+    <script>
+
+        function simular() {
+
+            let valor = Number(
+                document.getElementById("valor").value
+            );
+
+            let resultado = document.getElementById("resultado");
+
+            if (valor <= 0) {
+
+                alert("Meu patrão, digite um valor primeiro! 😂");
+                return;
+
+            }
+
+            let total = valor * 1.5;
+
+            resultado.style.display = "block";
+
+            resultado.innerHTML = `
+                <h3>😂 CRÉDITO IMAGINÁRIO APROVADO!</h3>
+
+                <p>Valor solicitado:
+                R$ ${valor.toFixed(2)}</p>
+
+                <p>Valor fictício após 30 dias:
+                R$ ${total.toFixed(2)}</p>
+
+                <p class="aviso">
+                Não conseguiu pagar?
+                Genario já está avaliando sua bicicleta! 🚲
+                </p>
+
+                <small>
+                Simulação humorística, sem validade financeira.
+                </small>
+            `;
+
+        }
+
+        function solicitar() {
+
+            alert(
+                "🚨 ATENÇÃO!\n\n" +
+                "Sua solicitação foi encaminhada para o " +
+                "Departamento de Análise do Genario!\n\n" +
+                "Tempo de resposta: quando ele quiser! 😂\n\n" +
+                "Brincadeira! Nenhum pedido foi enviado."
+            );
+
+        }
+
+    </script>
+
+</body>
+</html>
